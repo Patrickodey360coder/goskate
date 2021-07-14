@@ -1,7 +1,7 @@
 <template>
     <div>
         <carousel-component></carousel-component>
-        <skaters-component></skaters-component>
+        <skaters-component :skate="skaters"></skaters-component>
     </div>
 </template>
 
@@ -21,23 +21,23 @@
             }
         },
 
-        mounted(){
-            this.loadRollers()
-        },
-
         created() {
            this.loadSkaters()
         },
 
-
-
         methods: {
             loadSkaters(){
                 console.log('loaded skaters')
+                axios.get('/api/skaters')
+                    .then((res) => {
+                        this.skaters = res.data
+                        console.log(this.skaters)
+                    })
+                    .catch((err)=> {
+                        console.log(err)
+                    })
             },
-            loadRollers(){
-                console.log('loadrollers')
-            }
+
         },
 
 

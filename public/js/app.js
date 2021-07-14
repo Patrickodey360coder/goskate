@@ -1869,15 +1869,17 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.loadSkaters();
   },
-  mounted: function mounted() {
-    this.loadRollers();
-  },
   methods: {
     loadSkaters: function loadSkaters() {
+      var _this = this;
+
       console.log('loaded skaters');
-    },
-    loadRollers: function loadRollers() {
-      console.log('loadrollers');
+      axios.get('/api/skaters').then(function (res) {
+        _this.skaters = res.data;
+        console.log(_this.skaters);
+      })["catch"](function (err) {
+        console.log(err);
+      });
     }
   }
 });
@@ -1911,7 +1913,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  // props: ['name', 'age', 'state', 'stance'],
+  props: ['skate'],
   data: function data() {
     return {};
   }
@@ -37760,7 +37762,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("carousel-component"), _vm._v(" "), _c("skaters-component")],
+    [
+      _c("carousel-component"),
+      _vm._v(" "),
+      _c("skaters-component", { attrs: { skate: _vm.skaters } })
+    ],
     1
   )
 }
@@ -37900,33 +37906,55 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
-        _c("img", {
-          staticClass: "card-img-top",
-          attrs: {
-            src:
-              "https://images.pexels.com/photos/3274903/pexels-photo-3274903.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            alt: "..."
-          }
-        }),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body" }, [
-          _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-            _vm._v("See More...")
+  return _c(
+    "div",
+    { staticClass: "row" },
+    _vm._l(_vm.skate, function(skater) {
+      return _c(
+        "div",
+        {
+          key: skater.id,
+          staticClass: "card",
+          staticStyle: { width: "18rem" }
+        },
+        [
+          _c("img", {
+            staticClass: "card-img-top",
+            attrs: {
+              src:
+                "https://images.pexels.com/photos/3274903/pexels-photo-3274903.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+              alt: "..."
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c("p", { staticClass: "card-title" }, [
+              _vm._v("Name: " + _vm._s(skater.name))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v("Age: " + _vm._s(skater.age))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v("State: " + _vm._s(skater.state))
+            ]),
+            _vm._v(" "),
+            _c("p", { staticClass: "card-text" }, [
+              _vm._v("Stance: " + _vm._s(skater.stance))
+            ]),
+            _vm._v(" "),
+            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
+              _vm._v("See More...")
+            ])
           ])
-        ])
-      ])
-    ])
-  }
-]
+        ]
+      )
+    }),
+    0
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
