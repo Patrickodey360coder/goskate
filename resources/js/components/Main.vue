@@ -1,17 +1,45 @@
 <template>
-    <carousel-component></carousel-component>
+    <div>
+        <carousel-component></carousel-component>
+        <skaters-component></skaters-component>
+    </div>
 </template>
 
 <script>
     import Carousel from './Carousel.vue'
+    import Skaters from './Skaters.vue'
 
     export default {
         components: {
-            'carousel-component' : Carousel
+            'carousel-component' : Carousel,
+            'skaters-component' : Skaters
         },
 
-        mounted() {
-            console.log('Component mounted.')
-        }
+        data(){
+            return {
+                skaters: []
+            }
+        },
+
+        mounted(){
+            this.loadRollers()
+        },
+
+        created() {
+           this.loadSkaters()
+        },
+
+
+
+        methods: {
+            loadSkaters(){
+                console.log('loaded skaters')
+            },
+            loadRollers(){
+                console.log('loadrollers')
+            }
+        },
+
+
     }
 </script>

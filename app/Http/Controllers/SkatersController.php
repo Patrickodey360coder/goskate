@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Skater;
 
 class SkatersController extends Controller
 {
@@ -13,7 +14,8 @@ class SkatersController extends Controller
      */
     public function index()
     {
-        return 'this is a list of all skaters';
+        $skaters = Skater::all();
+        return $skaters;
     }
 
     /**
@@ -34,7 +36,8 @@ class SkatersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $skaters = Skater::create($request->all());
+        return $skaters;
     }
 
     /**
@@ -45,7 +48,8 @@ class SkatersController extends Controller
      */
     public function show($id)
     {
-        //
+        $skaters = Skater::find($id);
+        return $skaters;
     }
 
     /**
@@ -68,7 +72,8 @@ class SkatersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $skaters = Skater::find($id);
+        $skaters->update($request->all());
     }
 
     /**
@@ -79,6 +84,7 @@ class SkatersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skaters = Skater::find($id);
+        $skaters->delete();
     }
 }

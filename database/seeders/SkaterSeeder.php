@@ -15,10 +15,10 @@ class SkaterSeeder extends Seeder
     public function run()
     {
         DB::table('skaters')->insert([
-            'name' => 'Patrick Odey',
-            'age'  => '23',
-            'state' => 'Cross River',
-            'stance' => 'Goofy'
+            'name' => 'Ailrang Smart',
+            'age'  => '22',
+            'state' => 'Akwa Ibom',
+            'stance' => 'Regular'
         ]);
     }
 }

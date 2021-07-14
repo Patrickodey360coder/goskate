@@ -19,4 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/', [SkatersController::class, 'index']);
+Route::get('/skaters', [SkatersController::class, 'index']);
+Route::get('/skaters/{id}', [SkatersController::class, 'show']);
+Route::post('/skaters', [SkatersController::class, 'store']);
+Route::post('/skaters/{id}', [SkatersController::class, 'update']);
+Route::delete('/skaters/{id}', [SkatersController::class, 'destroy']);
+
