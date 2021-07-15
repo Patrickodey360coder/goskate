@@ -37909,49 +37909,49 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "row" },
-    _vm._l(_vm.skate, function(skater) {
-      return _c(
-        "div",
-        {
-          key: skater.id,
-          staticClass: "card",
-          staticStyle: { width: "18rem" }
-        },
-        [
-          _c("img", {
-            staticClass: "card-img-top",
-            attrs: {
-              src:
-                "https://images.pexels.com/photos/3274903/pexels-photo-3274903.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-              alt: "..."
-            }
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
-            _c("p", { staticClass: "card-title" }, [
-              _vm._v("Name: " + _vm._s(skater.name))
-            ]),
+    [
+      _c("h1", [_vm._v("Skater Profile")]),
+      _vm._v(" "),
+      _vm._l(_vm.skate, function(skater) {
+        return _c(
+          "div",
+          {
+            key: skater.id,
+            staticClass: "card",
+            staticStyle: { width: "18rem" }
+          },
+          [
+            _c("img", {
+              staticClass: "card-img-top",
+              attrs: {
+                src:
+                  "https://images.pexels.com/photos/3274903/pexels-photo-3274903.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                alt: "..."
+              }
+            }),
             _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v("Age: " + _vm._s(skater.age))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v("State: " + _vm._s(skater.state))
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "card-text" }, [
-              _vm._v("Stance: " + _vm._s(skater.stance))
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "btn btn-primary", attrs: { href: "#" } }, [
-              _vm._v("See More...")
+            _c("div", { staticClass: "card-body" }, [
+              _c("p", { staticClass: "card-title" }, [
+                _vm._v("Name: " + _vm._s(skater.name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("Age: " + _vm._s(skater.age))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("State: " + _vm._s(skater.state))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v("Stance: " + _vm._s(skater.stance))
+              ])
             ])
-          ])
-        ]
-      )
-    }),
-    0
+          ]
+        )
+      })
+    ],
+    2
   )
 }
 var staticRenderFns = []
