@@ -2,17 +2,20 @@
     <div>
         <carousel-component></carousel-component>
         <skaters-component :skate="skaters"></skaters-component>
+        <showskater-component></showskater-component>
     </div>
 </template>
 
 <script>
     import Carousel from './Carousel.vue'
     import Skaters from './Skaters.vue'
+    import ShowSkaters from './ShowSkater.vue'
 
     export default {
         components: {
             'carousel-component' : Carousel,
-            'skaters-component' : Skaters
+            'skaters-component' : Skaters,
+            'showskater-component' : ShowSkaters
         },
 
         data(){
