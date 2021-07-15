@@ -1912,6 +1912,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['skate'],
   data: function data() {
@@ -37945,6 +37946,12 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
                 _vm._v("Stance: " + _vm._s(skater.stance))
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse dicta quia harum suscipit doloremque molestiae quae culpa vero sed."
+                )
               ])
             ])
           ]
