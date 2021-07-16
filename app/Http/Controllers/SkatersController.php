@@ -44,7 +44,7 @@ class SkatersController extends Controller
             'sponsors' => 'nullable|string|required',
             'description' => 'string|required'
         ]);
-        
+
         $skaters = Skater::create($request->all());
         return $skaters;
     }
@@ -81,6 +81,15 @@ class SkatersController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'string|required',
+            'age'  =>  'string|required',
+            'state' => 'string|required',
+            'stance' => 'string|required',
+            'sponsors' => 'nullable|string|required',
+            'description' => 'string|required'
+        ]);
+        
         $skaters = Skater::find($id);
         $skaters->update($request->all());
     }
