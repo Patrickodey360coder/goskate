@@ -44,6 +44,7 @@ class SkatersController extends Controller
             'sponsors' => 'nullable|string|required',
             'description' => 'string|required'
         ]);
+        
         $skaters = Skater::create($request->all());
         return $skaters;
     }
