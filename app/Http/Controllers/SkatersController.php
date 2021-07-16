@@ -36,6 +36,14 @@ class SkatersController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'string|required',
+            'age'  =>  'string|required',
+            'state' => 'string|required',
+            'stance' => 'string|required',
+            'sponsors' => 'nullable|string|required',
+            'description' => 'string|required'
+        ]);
         $skaters = Skater::create($request->all());
         return $skaters;
     }
