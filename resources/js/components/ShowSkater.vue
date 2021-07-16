@@ -7,7 +7,6 @@
         <p class="card-text">Age: {{skater.age}}</p>
         <p class="card-text">State: {{skater.state}}</p>
         <p class="card-text">Stance: {{skater.stance}}</p>
-        <a href="#" class="btn btn-primary">See More...</a>
       </div>
 </div>
   </div>
