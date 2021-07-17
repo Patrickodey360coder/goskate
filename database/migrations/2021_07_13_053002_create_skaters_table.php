@@ -20,6 +20,7 @@ class CreateSkatersTable extends Migration
             $table->string('state');
             $table->string('stance');
             $table->string('sponsors');
+            $table->string('bio');
             $table->timestamps();
         });
     }
