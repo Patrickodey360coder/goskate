@@ -87,7 +87,7 @@ class SkatersController extends Controller
             'state' => 'string|required',
             'stance' => 'string|required',
             'sponsors' => 'nullable|string|required',
-            'description' => 'string|required'
+            'bio' => 'string|required'
         ]);
         
         $skaters = Skater::find($id);
