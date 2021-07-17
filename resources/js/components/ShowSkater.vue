@@ -8,8 +8,7 @@
         <p class="card-text">State: {{skater.state}}</p>
         <p class="card-text">Stance: {{skater.stance}}</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse dicta quia harum suscipit doloremque molestiae quae culpa vero sed.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad esse dicta quia harum suscipit doloremque molestiae quae culpa vero sed.</p>
-
+        
       </div>
 </div>
   </div>
