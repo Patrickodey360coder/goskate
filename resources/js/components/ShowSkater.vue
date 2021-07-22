@@ -20,7 +20,8 @@ export default {
   data(){
     return {
       name: 'Pato',
-      age: 21
+      age: 21,
+      matches: 30
     }
   }
 }
